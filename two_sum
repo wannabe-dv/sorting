@@ -19,3 +19,14 @@ class leetcode;
 
   endfunction :two_sum
 endclass : leetcode
+
+module test;
+  leetcodec l;
+
+  initial begin
+    int list [] = '{8,7,2,3,5,1,4};
+
+    l = new();
+    $display("%p",l.two_sum(list, 10));
+  end
+endmodule : test
