@@ -1,0 +1,21 @@
+typedef int array_t [];
+array_t index_array;
+
+class leetcode;
+  int map [int];
+
+  function index_array two_sum (int list [], int target);
+    automatic int index[2] = '{-1,-1};
+
+    for (int i=0; i<list.size(); i++) begin
+      if (map.exists(target - list[i])) begin
+        index[0] = map[target-list[i]];
+        index[1] = i;
+        return index;
+      end
+      map[list[i]] = i;
+    end
+    return index;
+
+  endfunction :two_sum
+endclass : leetcode
