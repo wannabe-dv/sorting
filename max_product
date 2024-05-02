@@ -1,0 +1,31 @@
+typedef int array_t [];
+
+function array_t get_max_product(int list []);
+  int max = list[0];
+  int max2 = list[1];
+
+  int min = list[0];
+  int min2 = list[1];
+  
+  for (int i=0; i<list.size(); i++) begin
+    if (max >= list[i]) begin
+      max2 = max;
+      max = list[i];
+    end else if (max2 >= list[i]) begin
+      max2 = list[i];
+    end
+
+    if (min <= list[i]) begin
+      min2 = min;
+      min = list[i];
+    end else if (min2 <= list[i]) begin
+      min2 = list[i];
+    end
+
+    if (max*max2 >= min*min2) begin
+      return {max, max2};
+    end else begin
+      return {min, min2};
+    end
+  end
+endfunction : get_max_product
